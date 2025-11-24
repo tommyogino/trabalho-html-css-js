@@ -123,12 +123,19 @@ app.get("/books", async (req, res) => {
   res.json(data);
 });
 
-// 2. ADICIONAR OS LIVROS
+// 2. ADICIONAR OS LIVROS (Com validação de Ano)
 app.post("/books", authenticateUser, async (req, res) => {
   const { title, author, year } = req.body;
 
-  if (!title || !author) {
-    return res.status(400).json({ error: "Título e Autor são obrigatórios" });
+  // Validação 1: Campos obrigatórios
+  if (!title || !author || !year) {
+    return res.status(400).json({ error: "Título, Autor e Ano são obrigatórios" });
+  }
+
+  // Validação 2: Integridade do dado (Ano)
+  const anoAtual = new Date().getFullYear();
+  if (year < 1000 || year > anoAtual + 1) { // coloquei para aceitar até o ano que vem (pré-venda)
+    return res.status(400).json({ error: "Insira um ano válido." });
   }
 
   const { data, error } = await supabase
