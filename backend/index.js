@@ -105,25 +105,67 @@ async function authenticateUser(req, res, next) {
   next();
 }
 
+// 1. LISTAR OS LIVROS (Com busca)
+app.get("/books", async (req, res) => {
+  const { busca } = req.query; 
 
-// rota para o usuário criar uma lista
-app.post("/lists", authenticateUser, async (req, res) => {
-  const userId = req.user.id;
-  const { name } = req.body;
+  let query = supabase
+    .from("books")
+    .select("*")
+    .order('created_at', { ascending: false });
 
-  const { data, error } = await supabase
-    .from("wish_list")
-    .insert([{ name, user_id: userId }])
-    .select();
-
-  if (error) {
-    return res.status(400).json({ error: error.message });
+  if (busca) {
+    query = query.ilike('title', `%${busca}%`);
   }
 
-  res.status(200).json({
-    message: "Lista criada com sucesso",
-    list: data[0]
-  });
+  const { data, error } = await query;
+  if (error) return res.status(500).json({ error: error.message });
+  res.json(data);
+});
+
+// 2. ADICIONAR OS LIVROS
+app.post("/books", authenticateUser, async (req, res) => {
+  const { title, author, year } = req.body;
+
+  if (!title || !author) {
+    return res.status(400).json({ error: "Título e Autor são obrigatórios" });
+  }
+
+  const { data, error } = await supabase
+    .from("books")
+    .insert([{ title, author, year, available: true }])
+    .select();
+
+  if (error) return res.status(400).json({ error: error.message });
+  
+  res.status(200).json({ message: "Livro adicionado", book: data[0] });
+});
+
+// 3. MUDAR STATUS (Disponível/Emprestado)
+app.patch("/books/:id/status", authenticateUser, async (req, res) => {
+  const { id } = req.params;
+  const { available } = req.body;
+
+  const { error } = await supabase
+    .from("books")
+    .update({ available })
+    .eq("id", id);
+
+  if (error) return res.status(400).json({ error: error.message });
+  res.json({ message: "Status atualizado!" });
+});
+
+// 4. DELETAR LIVRO
+app.delete("/books/:id", authenticateUser, async (req, res) => {
+  const { id } = req.params;
+
+  const { error } = await supabase
+    .from("books")
+    .delete()
+    .eq("id", id);
+
+  if (error) return res.status(500).json({ error: error.message });
+  res.json({ message: "Livro removido" });
 });
 
 
