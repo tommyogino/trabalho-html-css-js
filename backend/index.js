@@ -162,19 +162,25 @@ app.patch("/books/:id/status", authenticateUser, async (req, res) => {
   res.json({ message: "Status atualizado!" });
 });
 
-// 4. DELETAR LIVRO
+// 4. DELETAR LIVRO (Com verificação se existia)
 app.delete("/books/:id", authenticateUser, async (req, res) => {
   const { id } = req.params;
 
-  const { error } = await supabase
+  const { data, error } = await supabase
     .from("books")
     .delete()
-    .eq("id", id);
+    .eq("id", id)
+    .select(); // O segredo é pedir para retornar o que foi deletado
 
   if (error) return res.status(500).json({ error: error.message });
-  res.json({ message: "Livro removido" });
-});
 
+  // Se o array 'data' estiver vazio, nada foi apagado (ID não existia)
+  if (data.length === 0) {
+    return res.status(404).json({ error: "Livro não encontrado para exclusão." });
+  }
+
+  res.json({ message: "Livro removido com sucesso" });
+});
 
 // iniciar o servidor
 app.listen(3000, () => {
