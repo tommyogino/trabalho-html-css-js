@@ -123,7 +123,8 @@ app.get("/books", async (req, res) => {
 
 // 2. ADICIONAR OS LIVROS (Com validação de Ano)
 app.post("/books", authenticateUser, async (req, res) => {
-  const { title, author, year } = req.body;
+  const { title, author, year, ISBN, sinopse, editora, rating, preco } =
+    req.body;
 
   // Validação 1: Campos obrigatórios
   if (!title || !author || !year) {
@@ -141,7 +142,19 @@ app.post("/books", authenticateUser, async (req, res) => {
 
   const { data, error } = await supabase
     .from("books")
-    .insert([{ title, author, year, available: true }])
+    .insert([
+      {
+        title,
+        author,
+        year,
+        ISBN,
+        sinopse,
+        editora,
+        rating,
+        preco,
+        available: true,
+      },
+    ])
     .select();
 
   if (error) return res.status(400).json({ error: error.message });
