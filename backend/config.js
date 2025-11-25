@@ -7,17 +7,17 @@ dotenv.config();
 
 // Verificação simples para garantir que o .env está certo
 if (!process.env.SUPABASE_URL) {
-    console.error("⚠️  ERRO: Faltam as credenciais do Supabase no arquivo .env");
+  console.error("⚠️  ERRO: Faltam as credenciais do Supabase no arquivo .env");
 }
 
 // Cliente para Autenticação (Login/Registro)
 export const supabaseAuth = createClient(
-    process.env.SUPABASE_URL,
-    process.env.SUPABASE_PUBLIC_KEY
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_PUBLIC_KEY
 );
 
 // Cliente para Manipulação de Dados (CRUD do Banco)
 export const supabase = createClient(
-    process.env.SUPABASE_URL,
-    process.env.SUPABASE_ROLE_KEY
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_ROLE_KEY
 );
