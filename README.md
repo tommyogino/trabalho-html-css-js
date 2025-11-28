@@ -49,3 +49,50 @@ O projeto consiste na comunicacao de um site com seu banco de dados criado no Su
 - Scripts JS dedicados à interatividade
 - Backend preparado para integração
 - Comunicação front ↔ back (ex.: fetch, rotas, JSON)
+
+## 👥 5.Autores
+
+<table>
+  <tr align="center">
+    <td>
+      <a href="https://github.com/tommyogino">
+        <img src="https://github.com/tommyogino.png" width="80" height="80"><br>
+        Tommy Ogino
+      </a>
+    </td>
+    <td>
+      <a href="https://github.com/jazzuyu">
+        <img src="https://github.com/jazzuyu.png" width="80" height="80"><br>
+        Carla Yasmin
+      </a>
+    </td>
+    <td>
+      <a href="https://github.com/EduardoBatistussi">
+        <img src="https://github.com/EduardoBatistussi.png" width="80" height="80"><br>
+        Eduardo B.
+      </a>
+    </td>
+  </tr>
+  <tr align="center">
+    <td>
+      <a href="https://github.com/DanielC307">
+        <img src="https://github.com/DanielC307.png" width="80" height="80"><br>
+        Daniel Caetano
+      </a>
+    </td>
+    <td>
+      <a href="https://github.com/PsicoPato8">
+        <img src="https://github.com/PsicoPato8.png" width="80" height="80"><br>
+        Daniella Gomes
+      </a>
+    </td>
+    <td>
+      <a href="https://github.com/zxVinaum">
+        <img src="https://github.com/zxVinaum.png" width="80" height="80"><br>
+        Vinicius Bremer
+      </a>
+    </td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
