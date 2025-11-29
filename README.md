@@ -1,16 +1,19 @@
 # 🌐 Trabalho HTML, CSS e JS — Desenvolvimento Web
 
-Este repositório contém o projeto desenvolvido para a disciplina de Desenvolvimento Web, cujo objetivo foi criar uma aplicação completa integrando **frontend (HTML, CSS, JS)** e **backend**.
+Este repositório contém o projeto desenvolvido para a disciplina de Desenvolvimento Web, cujo objetivo foi criar uma aplicação simples integrando **frontend (HTML, CSS, JS)** e **backend**.
+
+---
 
 ## 🎯 1. Visão Geral
 
-O sistema consiste em um site estático com JavaScript no frontend, integrado a um backend simples para manipulação de dados.  
+O sistema consiste em um site com JavaScript no frontend, integrado a um backend simples para manipulação de dados.  
 O objetivo é cumprir os requisitos:
 
 - Uso de HTML e CSS
 - Interatividade com JavaScript
 - Backend com rotas/serviços
 - Comunicação via API
+- Inserção no banco de dados
 - Organização e boas práticas
 
 ## 🧰 2. Tecnologias Utilizadas
@@ -29,7 +32,7 @@ O objetivo é cumprir os requisitos:
 <img align="left" alt="html" width="60px" style="padding-right:10px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodemon/nodemon-plain.svg" />
 <img align="left" alt="html" width="60px" style="padding-right:10px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg" />
 <img align="left" alt="html" width="60px" style="padding-right:10px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" />
-<img align="left" alt="html" width="60px" style="padding-right:10px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-plain.svg" />
+<img align="left" alt="html" width="60px" style="padding-right:10px"  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" />         
 <img align="left" alt="html" width="60px" style="padding-right:10px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/json/json-plain.svg" />
 <br>
 <br>
@@ -38,7 +41,7 @@ O objetivo é cumprir os requisitos:
 
 <img align="left" alt="html" width="60px" style="padding-right:10px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg" />
 <img align="left" alt="html" width="60px" style="padding-right:10px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-plain.svg" />
-<img align="left" alt="html" width="60px" style="padding-right:10px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-plain.svg" />
+<img align="left" alt="html" width="60px" style="padding-right:10px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" />        
 <br>
 <br>
 
