@@ -47,7 +47,7 @@ O objetivo é cumprir os requisitos:
 
 ## 📁 3. Estrutura do Projeto
 
-O projeto consiste na comunicacao de um site com seu banco de dados criado no Supabase atraves de uma API utilizando express para envio e recebimento de dados JSON.
+O projeto consiste na comunicacao de uma loja de livros online com seu banco de dados criado no Supabase atraves de uma API utilizando express para envio e recebimento de dados JSON.
 
 ## ✅ 4. Funcionalidades Implementadas
 
