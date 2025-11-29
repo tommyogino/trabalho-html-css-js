@@ -96,7 +96,5 @@ O projeto consiste na comunicacao de um site com seu banco de dados criado no Su
         Vinicius Bremer
       </a>
     </td>
-    <td></td>
-    <td></td>
   </tr>
 </table>
