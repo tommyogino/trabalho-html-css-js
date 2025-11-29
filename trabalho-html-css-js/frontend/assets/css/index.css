@@ -1,0 +1,8 @@
+.form-container{
+    max-width: 300px;
+    padding: 1rem;
+}
+
+form > .icone-user{
+ justify-items: center;
+}
